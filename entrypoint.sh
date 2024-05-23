@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # Log the CRON_SCHEDULE
 echo "Setting up cron job with schedule: $CRON_SCHEDULE"
 echo "Setting up cron job with schedule: $CRON_SCHEDULE" >> /var/log/cron.log
@@ -15,3 +15,4 @@ crontab /etc/cron.d/backup-cron
 
 # Start cron and tail log file
 cron && tail -f /var/log/cron.log
+
