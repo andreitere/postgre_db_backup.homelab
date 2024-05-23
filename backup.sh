@@ -35,7 +35,7 @@ export PGPASSWORD=$POSTGRES_PASSWORD
 
 # Dump the schema
 echo "Dumping schema..." >> $LOG_FILE
-pg_dump -U $POSTGRES_USER -h $POSTGRES_HOST -d $POSTGRES_DB --schema-only > $SCHEMA_FILE 2>> $LOG_FILE
+pg_dump -U $POSTGRES_USER -h $POSTGRES_HOST -d $POSTGRES_DB --schema-only -f $SCHEMA_FILE 2>> $LOG_FILE
 if [ $? -eq 0 ]; then
     echo "Schema dump completed successfully." >> $LOG_FILE
 else
