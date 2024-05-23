@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "$CRON_SCHEDULE root /usr/local/bin/backup.sh"
+# Log the CRON_SCHEDULE
+echo "Setting up cron job with schedule: $CRON_SCHEDULE"
+echo "Setting up cron job with schedule: $CRON_SCHEDULE" >> /var/log/cron.log
+
 # Create a cron job file
 echo "$CRON_SCHEDULE root /usr/local/bin/backup.sh >> /var/log/cron.log 2>&1" > /etc/cron.d/backup-cron
 
