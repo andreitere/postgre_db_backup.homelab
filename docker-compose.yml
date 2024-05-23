@@ -1,8 +1,7 @@
 version: '3.8'
 services:
   nexus:
-    image: pg_backup:0.1
-    build: .
+    image: dckr.cloudcrafts.club/pg_backup:latest
     container_name: ${APP_NAME:-pg_database_backup}-pg-backup
     volumes:
       - "db_backup:/backups"
