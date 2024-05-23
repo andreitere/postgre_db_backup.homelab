@@ -14,6 +14,10 @@ services:
       - POSTGRES_HOST=${POSTGRES_HOST}
       - APP_NAME=${APP_NAME}
       - CRON_SCHEDULE=${CRON_SCHEDULE}
+    deploy:
+      resources:
+        limits:
+          memory: "1g"
 volumes:
   db_backup:
     external: true
