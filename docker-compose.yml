@@ -6,6 +6,15 @@ services:
     container_name: ${APP_NAME:-pg_database_backup}-pg-backup
     volumes:
       - "db_backup:/backups"
+    environment:
+      - TG_BOT_TOKEN=${TG_BOT_TOKEN}
+      - TG_CHAT_ID=${TG_CHAT_ID}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - APP_NAME=${APP_NAME}
+      - CRON_SCHEDULE=${CRON_SCHEDULE:-"0 2 * * *"}
 volumes:
   db_backup:
     external: true
