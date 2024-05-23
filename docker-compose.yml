@@ -13,7 +13,7 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_HOST=${POSTGRES_HOST}
       - APP_NAME=${APP_NAME}
-      - CRON_SCHEDULE=${CRON_SCHEDULE:-"0 2 * * *"}
+      - CRON_SCHEDULE=${CRON_SCHEDULE}
 volumes:
   db_backup:
     external: true
