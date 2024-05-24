@@ -1,6 +1,17 @@
 #!/bin/bash
 
-# Log the CRON_SCHEDULE
+cat <<EOL > /usr/local/bin/env.sh
+TG_BOT_TOKEN="$TG_BOT_TOKEN"
+TG_CHAT_ID="$TG_CHAT_ID"
+POSTGRES_USER="$POSTGRES_USER"
+POSTGRES_PASSWORD="$POSTGRES_PASSWORD"
+POSTGRES_DB="$POSTGRES_DB"
+POSTGRES_HOST="$POSTGRES_HOST"
+BACKUP_DIR="$BACKUP_DIR"
+APP_NAME="$APP_NAME"
+CRON_SCHEDULE="$CRON_SCHEDULE"
+EOL
+
 echo "Setting up cron job with schedule: $CRON_SCHEDULE"
 echo "Setting up cron job with schedule: $CRON_SCHEDULE" >> /var/log/cron.log
 
